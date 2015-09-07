@@ -17,6 +17,17 @@
  *  Simply define a switch to be used, the presence(s) to monitor, then tie the state of the switch & presence to a specific Hello, Home routine.
  *
  *
+ * 
+ *        _.-"""-,
+ *      .'  ..::. `\
+ *     /  .::' `'` /
+ *    / .::' .--.=;
+ *    | ::' /  C ..\
+ *    | :: |   \  _.)
+ *     \ ':|   /  \
+ *      '-, \./ \)\)
+ *         `-|   );/
+ *            '--'-'
  */
 definition(
     name: "Smart Switch Routine",
@@ -24,8 +35,9 @@ definition(
     author: "John Lynch",
     description: "Directly connects a switch's state and presences to a routine.",
     category: "Convenience",
-    iconUrl: "https://www.dropbox.com/s/5ebbmvknrjngkk8/smartswitch.png?dl=0",
-    iconX2Url: "https://www.dropbox.com/s/5ebbmvknrjngkk8/smartswitch.png?dl=0")
+    iconUrl: "https://raw.githubusercontent.com/Ayechaw/SmartThings/master/SmartSwitchRoutine/smartswitch.png",
+    iconX2Url: "https://raw.githubusercontent.com/Ayechaw/SmartThings/master/SmartSwitchRoutine/smartswitch.png",
+    iconX3Url: "https://raw.githubusercontent.com/Ayechaw/SmartThings/master/SmartSwitchRoutine/smartswitch.png")
 
 
 preferences {
@@ -36,7 +48,7 @@ preferences {
 
 // Main setup screen for SmartApp
 def MainSetup() {    
-    dynamicPage(name: "MainSetup", title: "Are you home? - Switch Activates Routines", install:true, uninstall: true) {
+    dynamicPage(name: "MainSetup", title: "Smart Switch Routine", install:true, uninstall: true) {
     section("About") {
         paragraph "A SmartApp that directly connects a switch's state and your presence to a Routine." 
     }
@@ -89,8 +101,8 @@ def OptionalSetup() {
             	}
             }
         section ("False Alarm Thresholds...(defaults to 10 min)") {
-        	input "falseAlarmThresholdHome", "decimal", title: "I've arrived! - False alarm threshold", required: false
-            input "falseAlarmThresholdAway", "decimal", title: "I've left! - False alarm threshold", required: false
+        	input "falseAlarmThresholdHome", "decimal", title: "I've arrived - False alarm threshold", required: false
+            input "falseAlarmThresholdAway", "decimal", title: "I've left - False alarm threshold", required: false
             }
         section {
         	href(name: "toMainSetupSetup", title: "Back to Main Setup Page", page: "MainSetup")
